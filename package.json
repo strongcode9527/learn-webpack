@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "node ./node/env.js",
+    "build": "node ./node/prod.js"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.26.0",
