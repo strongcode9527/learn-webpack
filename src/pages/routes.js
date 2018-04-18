@@ -1,13 +1,18 @@
 import React from 'react'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import Home from './home/index.js'
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+
+import asyncComponent from '../components/asyncComponent'
+
+const AsyncHome = asyncComponent(() => import('./home'))
+const AsyncShow = asyncComponent(() => import('./show'))
 
 const BasicExample = () => (
   <Router>
-    <Route exact path="/" component={Home} />
-    {/* <Route path="/about" component={About} />
-    <Route path="/topics" component={Topics} /> */}
+    <Switch>
+      <Route exact path="/" component={AsyncHome} />
+      <Route path="/show" component={AsyncShow} /> 
+    </Switch>
   </Router>
-);
+)
 
 export default BasicExample

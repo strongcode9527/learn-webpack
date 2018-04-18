@@ -13,7 +13,8 @@ const webpack = require('webpack'),
 const options = {
   hot: true,
   hotOnly: true,
-  contentBase: '/'
+  contentBase: '/',
+  historyApiFallback: true
 }
 
 
