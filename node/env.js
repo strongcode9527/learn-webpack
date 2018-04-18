@@ -1,6 +1,6 @@
 const webpack = require('webpack'),
   openBrowser = require('react-dev-utils/openBrowser'),
-  webpackConfig = require('../webpack/webpack.config'),
+  webpackConfig = require('../webpack/webpack.dev'),
   webpackDevServer = require('webpack-dev-server'),
   chalk = require('chalk'),
   {
@@ -24,7 +24,6 @@ const HOST = process.env.HOST || '0.0.0.0';
 choosePort(HOST, DEFAULT_PORT)
 .then((port) => {
   //再次加入hmr必要代码。
-  Object.keys(webpackConfig.entry).forEach(item => webpackConfig.entry[item].unshift('react-dev-utils/webpackHotDevClient'))
   const url = prepareUrls('http', HOST, port),
     compile = createCompiler(webpack, webpackConfig, 'react-form', url),
     server = new webpackDevServer(compile, options)
