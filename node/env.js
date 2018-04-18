@@ -25,7 +25,7 @@ const HOST = process.env.HOST || '0.0.0.0';
 choosePort(HOST, DEFAULT_PORT)
 .then((port) => {
   const url = prepareUrls('http', HOST, port),
-    compile = createCompiler(webpack, webpackConfig, 'react-form', url),
+    compile = createCompiler(webpack, webpackConfig, 'learn-webpack', url),
     server = new webpackDevServer(compile, options)
     server.listen(port, HOST, err => {
       openBrowser(url.localUrlForBrowser)

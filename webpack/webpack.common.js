@@ -5,7 +5,7 @@ module.exports = {
   entry: ['babel-polyfill', path.resolve(__dirname, '../src/index')],
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].[hash].bundle.js'
   },
   module: {
     rules: [
