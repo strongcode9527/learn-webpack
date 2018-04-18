@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node ./node/env.js"
+    "start": "node ./node/env.js",
+    "build": "node ./node/prod.js"
   },
   "devDependencies": {
     "babel": "^6.23.0",

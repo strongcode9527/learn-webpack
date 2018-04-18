@@ -23,7 +23,6 @@ const HOST = process.env.HOST || '0.0.0.0';
 
 choosePort(HOST, DEFAULT_PORT)
 .then((port) => {
-  //再次加入hmr必要代码。
   const url = prepareUrls('http', HOST, port),
     compile = createCompiler(webpack, webpackConfig, 'react-form', url),
     server = new webpackDevServer(compile, options)
