@@ -12,7 +12,15 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: ['babel-loader','eslint-loader'],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-stage-2', '@babel/preset-react']
+            }
+          },
+          'eslint-loader'
+        ],
         exclude: /node_modules/
       },
       {
