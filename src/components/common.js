@@ -2,8 +2,11 @@ import React, {Component} from 'react'
 
 export class A extends Component {
   render() {
+    const a = {
+      name: 'strong'
+    }
     return (
-      <div>AComponent</div>
+      <div {...a}>AComponent</div>
     )
   }
 }
