@@ -1,7 +1,7 @@
 const webpack = require('webpack'),
       merge = require('webpack-merge'),
       common = require('./webpack.common.js'),
-      // UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
+      UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
       MinifyPlugin = require('babel-minify-webpack-plugin'),
       BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin,
       HtmlWebpackPlugin = require('html-webpack-plugin'),
@@ -10,9 +10,7 @@ const webpack = require('webpack'),
 
 module.exports = merge(common, {
   plugins: [
-    new MinifyPlugin({}, {
-      // minifyPreset: env
-    }),
+    new UglifyJSPlugin(),
     new BabelPlugin({
       test: /\.js$/,
       babelOptions: {
